@@ -1,0 +1,15 @@
+{
+  "name": "rxjs-study",
+  "description": "RxJS examples for study",
+  "version": "0.0.1",
+  "author": {
+    "name": "Song Younghwan",
+    "email": "purluno@gmail.com",
+    "url": "http://purluno.github.io/"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "rx": "^4.1.0"
+  }
+}
