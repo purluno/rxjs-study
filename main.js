@@ -16,6 +16,8 @@ if (args.length == 0) {
 var name = args[0]
 if (name.startsWith('dice')) {
   child_process.fork(`dice/${name}`, args.slice(1))
+} else if (name.startsWith('benchmark')) {
+  child_process.fork(`benchmark/${name}`, args.slice(1))
 } else {
   child_process.fork(name, args.slice(1))
 }
