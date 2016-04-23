@@ -39,8 +39,7 @@ var infiniteDiceRolls = diceRollAndCatch.doWhile(() => true)
 var diceRollTimes = infiniteDiceRolls.timeInterval()
 
 // 주사위 던진 값에 번호를 붙여준다.
-var numberedDiceRolls = Rx.Observable.interval()
-  .skip(1)
+var numberedDiceRolls = Rx.Observable.range(1, Infinity)
   .zip(diceRollTimes, (n, r) => ({id: n, value: r.value, interval: r.interval}))
 
 // 주사위를 30회 던져 번호, 결과와 소요시간을 출력한다.

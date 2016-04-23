@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dice</title>
+<style>
+div.console {
+  margin: 20px 0;
+  border: 2px solid #000;
+  padding: 10px;
+  font-family: monospace;
+}
+</style>
+</head>
+<body>
+<h1>Dice</h1>
+<button class="execute">실행</button>
+<button class="clear">화면 지우기</button>
+<div class="console"></div>
+<script>
+'use strict'
+
+var con = document.querySelector('div.console')
+
+function conClear() {
+  while (con.firstChild) {
+    con.removeChild(con.firstChild)
+  }
+}
+
+function conPrint(text) {
+  var div = document.createElement('div')
+  div.textContent = text
+  con.appendChild(div)
+  while (con.childNodes.length > 1000) {
+    con.removeChild(con.firstChild)
+  }
+}
+
+document.querySelector('button.execute').addEventListener('click', () => {
+  execute()
+})
+
+document.querySelector('button.clear').addEventListener('click', () => {
+  conClear()
+})
+</script>
+<script src="rx.all.js"></script>
+<script src="dice.js"></script>
+</body>
+</html>
